@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  finaktivaeventlogs.api:
+    container_name: finaktivaeventlogsmicroservice
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - DOCKER_TIMEZONE=America/Bogota
+    ports:
+      - "7013:80"
+    volumes:
+      - emailmessage_templates:/var/lib/Templates

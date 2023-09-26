@@ -7,6 +7,8 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - DOCKER_TIMEZONE=America/Bogota
     ports:
-      - "7013:80"
+      - "7050:80"
     volumes:
       - emailmessage_templates:/var/lib/Templates
+volumes:
+  emailmessage_templates:

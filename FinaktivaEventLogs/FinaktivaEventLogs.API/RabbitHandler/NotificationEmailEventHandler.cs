@@ -31,7 +31,7 @@ namespace FinaktivaEventLogs.API.RabbitHandler
                 Events = _mapper.Map<List<EmailMessage.Models.EventICalendarDto>>(@event.Events),
             };
 
-            _emailService.SendNotificationWithTemplate(emailData);
+            _emailService.SendNotification(emailData);
             return Task.CompletedTask;
         }
     }

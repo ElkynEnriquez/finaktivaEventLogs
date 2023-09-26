@@ -4,6 +4,6 @@ namespace EmailMessage.Services.Contract
 {
     public interface IEmailService
     {
-        void SendNotificationWithTemplate(EmailNotificationDto emailNotification);
+        void SendNotification(EmailNotificationDto emailNotification);
     }
 }

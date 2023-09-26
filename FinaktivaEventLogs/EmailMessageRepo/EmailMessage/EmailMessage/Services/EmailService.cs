@@ -1,26 +1,16 @@
 ﻿using EmailMessage.Configuration;
 using EmailMessage.Models;
-using EmailMessage.Models.Enum;
 using EmailMessage.Services.Contract;
 using Ical.Net;
 using Ical.Net.CalendarComponents;
 using Ical.Net.DataTypes;
 using Ical.Net.Serialization;
 using MailKit.Net.Smtp;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using MimeKit;
-using MimeKit.Utils;
-using SixLabors.Fonts;
-using SixLabors.ImageSharp;
-using SixLabors.ImageSharp.Drawing.Processing;
-using SixLabors.ImageSharp.Processing;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Text;
-//using System.Net.Mail;
-//using System.Net.Mime;
 
 namespace EmailMessage.Services
 {
@@ -38,7 +28,7 @@ namespace EmailMessage.Services
             try
             {
                 //logo para usar en el encabezado de los correos
-                var logo = "http://lilisoft.net/assets/images/LogoLiliSoftQr300px.png";
+                var logo = "https://finaktiva.com/assets/images/miniatura-redes-sociales.jpg";
                 MimeMessage emailMessage = new();
                 // De:
                 MailboxAddress emailFrom = new(_emailSettings.Name, _emailSettings.EmailId);
@@ -82,12 +72,9 @@ namespace EmailMessage.Services
                             Content = new MimeContent(new MemoryStream(Encoding.UTF8.GetBytes(serializedCalendarContent))),
                             ContentDisposition = new ContentDisposition(ContentDisposition.Attachment),
                             ContentTransferEncoding = ContentEncoding.Base64,
-                            FileName = "eventoLiliSoft.ics"
+                            FileName = "event.ics"
                         };
 
-                        //var multipart = new Multipart("mixed");
-                        //multipart.Add(attachment);
-                        //multipart.Add(emailBodyBuilder.ToMessageBody()); // Agrega el cuerpo del correo electrónico
                         emailBodyBuilder.Attachments.Add(attachment);
                     }
                     

@@ -9,6 +9,7 @@ namespace FinaktivaEventLogs.Services.DTO
         public Guid CreateRegisterByUserId { get; set; }
         public DateTime CreateRegisterDate { get; set; } = DateTime.Now;
 
+        public string Title { get; set; }
         [JsonConverter(typeof(StringEnumConverter))]
         public EEventTypeDto Type { get; set; }
         public string Description { get; set; }

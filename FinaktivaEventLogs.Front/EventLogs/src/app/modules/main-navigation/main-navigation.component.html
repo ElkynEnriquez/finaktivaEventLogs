@@ -1,0 +1,38 @@
+<mat-nav-list style="max-height: 92vh; overflow: overlay;">
+  <mat-accordion>
+    <!-- Menu dinámico -->
+    <div *ngFor="let item of menuList">
+      <div
+        *ngIf="!item.childs">
+        <a mat-list-item class="navItem" (click)="accordion.closeAll()" routerLinkActive="active"
+          [routerLink]="[item.path]"
+         >
+          <mat-icon class="mat-icon-menu">{{item.icon}}</mat-icon>
+          <span *ngIf="item.new" class="text" matBadge="New" matBadgeOverlap="false">{{item.field}}</span>
+          <span *ngIf="!item.new">{{item.field}}</span>
+        </a>
+      </div>
+      <mat-expansion-panel
+        class="displayedMenu"
+        *ngIf="item.childs">
+        <mat-expansion-panel-header class="displayedMenuHeader">
+          <mat-panel-title class="mat-panel-title">
+            <mat-icon class="mat-icon-menu">{{item.icon}}</mat-icon>
+            <span>{{item.field}}</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <span *ngFor="let listItem of item.childs">
+          <a mat-list-item routerLinkActive="active"
+            [routerLink]="[listItem.path]"
+            >
+            <span class="iconNull"></span>
+            <span *ngIf="listItem.icon">
+              <mat-icon class="mat-icon-menu">{{listItem.icon}}</mat-icon>
+            </span>
+            {{listItem.field}}
+          </a>
+        </span>
+      </mat-expansion-panel>
+    </div>
+  </mat-accordion>
+</mat-nav-list>

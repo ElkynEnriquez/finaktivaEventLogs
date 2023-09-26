@@ -2,6 +2,7 @@
 using FinaktivaEventLogs.Services;
 using FinaktivaEventLogs.Services.DTO;
 using FinaktivaEventLogs.Services.DTO.Common;
+using FinaktivaEventLogs.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,12 +10,12 @@ namespace FinaktivaEventLogs.API.Controllers
 {
     [ApiVersion("1.0")]
     [Route("[controller]")]
-    [Authorize]
+    //[Authorize]
     [ApiController]
-    public class EventLogController : Controller
+    public class EventLogController : ControllerBase
     {
-        private readonly EventLogService _eventLogService;
-        public EventLogController(EventLogService eventLogService)
+        private readonly IEventLogService _eventLogService;
+        public EventLogController(IEventLogService eventLogService)
         {
             _eventLogService = eventLogService; ;
         }

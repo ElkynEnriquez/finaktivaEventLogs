@@ -9,6 +9,7 @@ namespace FinaktivaEventLogs.Services.AutoMapper
         public EventLogProfile()
         {
             CreateMap<EventLog, EventLogDto>().ReverseMap();
+            CreateMap<EventLog, EventLogCreateDto>().ReverseMap();
         }
     }
 }

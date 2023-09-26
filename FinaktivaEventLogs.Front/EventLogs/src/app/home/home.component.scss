@@ -1,0 +1,31 @@
+/**
+  Section fullscreen with image
+*/
+.bigContainer {
+  position: relative;
+  .image {
+    background-size: cover;
+    height: calc(100vh - 64px);
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.85);
+  }
+  .section-float {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+    height: 100%;
+    section {
+      width: min(95%, 400px);
+      min-width: 200px;
+      max-width: min(95%, 450px);
+      box-sizing: border-box;
+      box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.2),
+        0 0 0 1px rgba(10, 10, 10, 0.03);
+    }
+  }
+}

@@ -1,0 +1,64 @@
+<span style="flex: 1 1 auto; "></span>
+  <a routerLink="/">
+    <img src="https://www.finaktiva.com/assets/images/finaktiva-logo.svg" class="logoToolbar" />
+  </a>
+<span style="flex: 1 1 auto; "></span>
+<!--Administrador Root -->
+
+  <!-- Botón de notificaciones STAND BY -->
+  <button
+    mat-button
+    [matMenuTriggerFor]="notifications"
+    matTooltip="Notificaciones"
+    >
+    <mat-icon
+      matBadgeColor="warn"
+      matBadgeOverlap="false"
+      style="font-size: x-large;"
+      >
+      notifications
+    </mat-icon>
+  </button>
+
+  <!-- Botón de menú de usuario STAND BY -->
+  <button
+    mat-button class="userMenuImage"
+    [matMenuTriggerFor]="userMenu"
+    matTooltip="Cuenta"
+    aria-label="Menú de usuario">
+    <mat-icon
+      style="font-size: x-large;">
+      person
+    </mat-icon>
+  </button>
+<!-- Displayed Notifications -->
+<mat-menu
+  #notifications="matMenu"
+  xPosition="before"
+  style="max-width: 330px !important;"
+  >
+</mat-menu>
+
+<!-- Displayed User Menu -->
+<mat-menu #userMenu="matMenu">
+
+  <div class="userMobile" style="text-align: center; padding:0 20px;">
+    <h3 style="margin-bottom: 0; font-weight:500;">Hola</h3>
+    <mat-divider></mat-divider>
+  </div>
+
+  <button
+    class="hide-on-med-and-up">
+    <mat-icon>account_circle</mat-icon>
+    <span>Iniciar Sesión</span>
+  </button>
+</mat-menu>
+
+<!-- Displayed Other Menu -->
+<mat-menu #otherMenu="matMenu">
+  <a mat-menu-item href="https://www.finaktiva.com/" target="_blank"
+    >
+    <mat-icon>link</mat-icon>
+    <span>Sitio Web</span>
+  </a>
+</mat-menu>

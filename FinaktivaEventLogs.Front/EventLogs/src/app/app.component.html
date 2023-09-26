@@ -1,0 +1,24 @@
+<header style="position: sticky; top: 0; z-index: 1000;">
+  <nav>
+    <mat-toolbar class="navBar" color="primary">
+      <mat-toolbar-row>
+        <button type="button" aria-label="Menú principal" mat-button (click)="drawer.toggle()" style="padding-left: 0;">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon> Menú
+        </button>
+        <app-toolbar style="width:inherit; display: flex;"></app-toolbar>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </nav>
+</header>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer mode="side" class="sidenav" [opened]="sideNavOpened" >
+    <app-main-navigation
+      (toggleSidenav)="drawer.toggle()">
+    </app-main-navigation>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <section>
+      <router-outlet></router-outlet>
+    </section>
+  </mat-sidenav-content>
+</mat-sidenav-container>

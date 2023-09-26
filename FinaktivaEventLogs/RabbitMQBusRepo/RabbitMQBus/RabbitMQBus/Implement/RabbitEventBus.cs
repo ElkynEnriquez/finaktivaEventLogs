@@ -37,7 +37,7 @@ namespace RabbitMQBus.Implement
 
         public void Publish<T>(T eventM) where T : Event
         {
-            var factory = new ConnectionFactory() { HostName = "votomaster-rabbit-web" };
+            var factory = new ConnectionFactory() { HostName = "finaktiva-rabbit-web" };
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {
@@ -77,7 +77,7 @@ namespace RabbitMQBus.Implement
 
             var factory = new ConnectionFactory()
             {
-                HostName = "votomaster-rabbit-web",
+                HostName = "finaktiva-rabbit-web",
                 DispatchConsumersAsync = true
             };
 

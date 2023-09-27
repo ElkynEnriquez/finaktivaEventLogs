@@ -1,0 +1,51 @@
+<form [formGroup]="FormGroupSend" autocomplete="off" (ngSubmit)="sendForm()">
+  <div >
+    <div formGroupName="FormCreate" style="width: auto">
+      <!-- Form group -->
+      <div class="row">
+        <div class="col-xs-12">
+          <h2 class="center-align blue-lilisoft-text">Registro de <b>puntos</b></h2>
+          <hr class="blue-lilisoft line-separator"/>
+        </div>
+      </div>
+      <div class="row center-xs middle-xs">
+        <div class="col-xs-12">
+          <p>
+            Todos los puntos pasan por un proceso de revisión, por favor sé claro y responsable con tus registros
+          </p>
+        </div>
+      </div>
+      <div class="row center-xs">
+        <!-- Description -->
+        <div class="col-xs-12 col-md-6">
+          <h4>
+            <b>
+              Detalles:
+            </b>
+          </h4>
+          <mat-form-field class="width-inputs" appearance="fill">
+            <mat-label>Observaciones</mat-label>
+            <textarea
+              matInput
+              formControlName="Description"
+              placeholder="Campo para observaciones">
+            </textarea>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 center-align">
+        <button
+          type="submit"
+          mat-raised-button
+          color="primary"
+          style="padding: 7px 20px; margin: 10px;"
+          [disabled]="!btnSubmit">
+          <b>Registrar</b>
+          <mat-icon>send</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

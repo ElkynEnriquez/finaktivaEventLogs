@@ -6,6 +6,7 @@ import { EventsRoutingModule } from './events-routing.module';
 import { TableEventComponent } from './table-event/table-event.component';
 import { MatTableExporterModule } from 'mat-table-exporter';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DialogEventComponent } from './dialog-event/dialog-event.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   declarations: [
     EventsComponent,
-    TableEventComponent
+    TableEventComponent,
+    DialogEventComponent
   ]
 })
 export class EventsModule { }

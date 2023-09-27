@@ -87,8 +87,8 @@ style="
         matTooltip="Registrar evento"
         matTooltipPosition="above"
         arial-label="Registrar evento"
+        (click)="createEvent()"
         >
-        <!-- (click)="createCriteriaPointsEmployee()" -->
         <mat-icon>app_registration</mat-icon>
       </button>
       <p style="margin-top: 10px;">Registrar evento</p>
@@ -121,7 +121,7 @@ style="
         matTooltip="Ayuda"
         matTooltipPosition="above"
         arial-label="Ayuda"
-        routerLink="/system/help"
+        routerLink="/help"
         >
         <mat-icon>help</mat-icon>
       </button>

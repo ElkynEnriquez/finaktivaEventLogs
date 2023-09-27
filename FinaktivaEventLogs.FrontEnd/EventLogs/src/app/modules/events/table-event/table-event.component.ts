@@ -489,11 +489,13 @@ loadResult(data: any) {
             ({
               id,
               type,
+              title,
               description,
               createRegisterDate,
             }: IEvent) => ({
               id: id,
               type: type,
+              title: title,
               description: description,
               createRegisterDate:
               createRegisterDate == null

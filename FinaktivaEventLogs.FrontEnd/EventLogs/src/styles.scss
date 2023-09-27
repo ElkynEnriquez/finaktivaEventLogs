@@ -109,7 +109,12 @@ form {
   background-color: rgba(100, 120, 150, 0.03) !important;
   border: solid 1px rgba(109, 100, 150, 0.062) !important;
 }
-
+.width-inputs {
+  width: 100%;
+  width: -moz-available;          /* WebKit-based browsers will ignore this. */
+  width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+  width: stretch; /* More Modern. */
+}
 app-main-navigation {
   mat-nav-list {
     mat-accordion {

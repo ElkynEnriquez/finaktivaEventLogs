@@ -4,37 +4,67 @@
       <!-- Form group -->
       <div class="row">
         <div class="col-xs-12">
-          <h2 class="center-align blue-lilisoft-text">Registro de <b>puntos</b></h2>
-          <hr class="blue-lilisoft line-separator"/>
+          <h2>Registro de <b>eventos</b></h2>
+          <hr/>
         </div>
       </div>
       <div class="row center-xs middle-xs">
         <div class="col-xs-12">
           <p>
-            Todos los puntos pasan por un proceso de revisión, por favor sé claro y responsable con tus registros
+            Por favor completa los siguientes campos
           </p>
         </div>
       </div>
       <div class="row center-xs">
-        <!-- Description -->
-        <div class="col-xs-12 col-md-6">
+        <!-- Titulo -->
+        <div class="col-xs-10 col-md-8">
           <h4>
             <b>
-              Detalles:
+              Como llamaremos el evento:
             </b>
           </h4>
           <mat-form-field class="width-inputs" appearance="fill">
-            <mat-label>Observaciones</mat-label>
+            <mat-label>Título del evento</mat-label>
+            <input
+              appUppercase
+              type="text"
+              matInput
+              formControlName="Title"
+              placeholder="Título del evento"
+              required
+            />
+          </mat-form-field>
+          <mat-error
+            *ngIf="
+            FormCreate.controls['Title']
+                .touched &&
+                FormCreate.controls
+                ['Title']
+                .hasError('required')
+            "
+          >
+            Campo <strong>obligatorio</strong>
+          </mat-error>
+        </div>
+        <!-- Description -->
+        <div class="col-xs-10 col-md-8">
+          <h4>
+            <b>
+              Descripción del evento:
+            </b>
+          </h4>
+          <mat-form-field class="width-inputs" appearance="fill">
+            <mat-label>Descripción</mat-label>
             <textarea
               matInput
               formControlName="Description"
-              placeholder="Campo para observaciones">
+              placeholder="Campo para descripción del evento">
             </textarea>
           </mat-form-field>
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row center-xs">
       <div class="col-xs-12 center-align">
         <button
           type="submit"
